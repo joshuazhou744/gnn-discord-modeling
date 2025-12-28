@@ -6,4 +6,4 @@ data/clean.csv
 
 # temporary, for testing
 clean_data_temp.ipynb
-temp.csv
+gnn_temp.ipynb

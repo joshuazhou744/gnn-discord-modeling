@@ -1,6 +1,7 @@
 ## Node schema
 
-user_id               (username)  
+user_id               (user id)
+username              (username)
 avg_text_embedding    (mean vector of all user messages)
 activity_stats        (total message count, interaction reply count, interaction initiation count)
 
@@ -15,8 +16,7 @@ source_user_id   (replier)
 target_user_id   (previous speaker / mentioned user)
 timestamp
 edge_type        (mention | temporal)
-metadata         (time_delta, is_media)
-<!-- maybe add this later: edge_confidence (1.0 mention, 0.7 temporal) -->
+<!-- maybe add these later: metadata (has_media) | edge_confidence (1.0 mention, 0.7 temporal) -->
 
 ## Trends to look for that can be represented, analyzed, modeled using a GNN
 - Social structure and roles
