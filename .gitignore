@@ -1,3 +1,9 @@
 data/raw.csv
+data/clean.csv
 
 .venv/
+
+
+# temporary, for testing
+clean_data_temp.ipynb
+temp.csv

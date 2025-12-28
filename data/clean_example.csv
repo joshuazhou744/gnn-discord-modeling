@@ -1,0 +1,2 @@
+AuthorID,Author,Date,Content,has_media,has_text
+"id","username","timestamp","message content","has media flag","has text flag"
