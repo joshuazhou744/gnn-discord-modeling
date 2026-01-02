@@ -1,22 +1,26 @@
-## Node schema
+## Node Schema
 
-user_id               (user id)
-username              (username)
-avg_text_embedding    (mean vector of all user messages)
-activity_stats        (total message count, interaction reply count, interaction initiation count)
+| Field Name            | Description |
+|----------------------|-------------|
+| `user_id`             | Unique user identifier |
+| `username`            | Discord username |
+| `avg_text_embedding`  | Mean embedding vector of all user messages |
+| `activity_stats`      | Aggregated activity features: total message count, interaction reply count, interaction initiation count |
+| `role_embedding`      | Learned user embedding produced by the GNN (not stored) |
 
-Eventually we can get
+---
 
-role_embedding        (learned output, NOT stored)
+## Edge Schema
 
-## Edge schema
-
-edge_id
-source_user_id   (replier)
-target_user_id   (previous speaker / mentioned user)
-timestamp
-edge_type        (mention | temporal)
-<!-- maybe add these later: metadata (has_media) | edge_confidence (1.0 mention, 0.7 temporal) -->
+| Field Name        | Description |
+|------------------|-------------|
+| `edge_id`         | Unique edge identifier |
+| `source_user_id`  | User initiating the interaction (replier or mentioner) |
+| `target_user_id`  | User being replied to or mentioned |
+| `timestamp`       | Time of the interaction |
+| `edge_type`       | Interaction type: `mention` or `temporal` |
+| `metadata`        | (Optional) Additional edge metadata (e.g. `has_media`) |
+| `edge_confidence` | (Optional) Confidence weight (e.g. `1.0` for mention, `0.7` for temporal) |
 
 ## Trends to look for that can be represented, analyzed, modeled using a GNN
 - Social structure and roles
